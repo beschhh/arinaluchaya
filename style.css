@@ -1,0 +1,104 @@
+ @import url('reset.css');
+
+.vse{
+    display: flex;
+    gap: 20px;
+    background-color: #554B43;
+    padding: 20px 20px;
+    overflow-x: hidden;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 60%;
+    min-width: 0;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 48%;
+    min-width: 0;
+}
+
+.pv{
+    display: flex;
+    gap: 20px;
+}
+
+.onetwo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.threefourk{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.threefour{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.seveneight{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.left img{
+    width: 82%;
+    left: 10%;
+}
+@media (max-width: 768px){
+@media (max-width: 768px){
+    .vse{
+        flex-direction: column;
+    }
+
+    .right,
+    .left,
+    .pv,
+    .onetwo,
+    .threefourk,
+    .threefour,
+    .seveneight{
+        width: 100%;
+    }
+
+    .pv{
+        flex-direction: column;
+    }
+
+    .threefour{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .seveneight{
+        flex-direction: column;
+    }
+
+    .left{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .left img{
+        width: calc((100% - 20px) / 2);
+    }
+}
+}
