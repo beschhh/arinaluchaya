@@ -1,104 +1,79 @@
- @import url('reset.css');
+@import url('reset.css');
 
-.vse{
+body {
+    margin: 0;
+    background: #554B43;
     display: flex;
-    gap: 20px;
-    background-color: #554B43;
-    padding: 20px 20px;
-    overflow-x: hidden;
+    justify-content: center;
+    padding: 20px;
 }
 
-.right{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 0 0 60%;
-    min-width: 0;
-}
-
-.left{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 0 0 48%;
-    min-width: 0;
-}
-
-.pv{
-    display: flex;
-    gap: 20px;
-}
-
-.onetwo{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.threefourk{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.threefour{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.seveneight{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 20px;
-}
-
-img{
-    display: block;
+.container {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    max-width: 1200px;
+    display: grid;
+    gap: 20px;
+
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+
+    grid-template-areas:
+        "one three"
+        "two four"
+        "five six"
+        "seven eight";
 }
-.left img{
-    width: 82%;
-    left: 10%;
+
+.card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
 }
-@media (max-width: 768px){
-@media (max-width: 768px){
-    .vse{
-        flex-direction: column;
-    }
 
-    .right,
-    .left,
-    .pv,
-    .onetwo,
-    .threefourk,
-    .threefour,
-    .seveneight{
-        width: 100%;
-    }
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-    .pv{
-        flex-direction: column;
-    }
+.card-1 { grid-area: one; }
+.card-2 { grid-area: two; }
+.card-3 { grid-area: three; }
+.card-4 { grid-area: four; }
+.card-5 { grid-area: five; }
+.card-6 { grid-area: six; }
+.card-7 { grid-area: seven; }
+.card-8 { grid-area: eight; }
 
-    .threefour{
-        flex-direction: row;
-        gap: 20px;
-    }
+.card-1::before { background-image: url("lala/one.svg"); }
+.card-2::before { background-image: url("lala/two.svg"); }
+.card-3::before { background-image: url("lala/three.svg"); }
+.card-4::before { background-image: url("lala/four.svg"); }
+.card-5::before { background-image: url("lala/5.svg"); }
+.card-6::before { background-image: url("lala/6.svg"); }
+.card-7::before { background-image: url("lala/7.svg"); }
+.card-8::before { background-image: url("lala/8.svg"); }
 
-    .seveneight{
-        flex-direction: column;
-    }
-
-    .left{
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .left img{
-        width: calc((100% - 20px) / 2);
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four"
+            "five"
+            "six"
+            "seven"
+            "eight";
     }
 }
+
+@media (max-width: 500px) {
+    .container {
+        gap: 10px;
+    }
 }
