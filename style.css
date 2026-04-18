@@ -1,79 +1,67 @@
 @import url('reset.css');
 
-body {
-    margin: 0;
-    background: #554B43;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
+.layout {
     display: grid;
-    gap: 20px;
-
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto auto auto;
-
-    grid-template-areas:
-        "one three"
-        "two four"
-        "five six"
-        "seven eight";
+    gap: 24px;
+    background: #554B43;
+    padding: 24px;
 }
 
-.card {
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.block {
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
+    width: 100%;
+    padding-top: 70%;
 }
 
-.card::before {
+.block::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
-.card-1 { grid-area: one; }
-.card-2 { grid-area: two; }
-.card-3 { grid-area: three; }
-.card-4 { grid-area: four; }
-.card-5 { grid-area: five; }
-.card-6 { grid-area: six; }
-.card-7 { grid-area: seven; }
-.card-8 { grid-area: eight; }
+.a::before { background-image: url("lala/one.svg"); }
+.b::before { background-image: url("lala/two.svg"); }
+.c::before { background-image: url("lala/three.svg"); }
+.d::before { background-image: url("lala/four.svg"); }
+.e::before { background-image: url("lala/5.svg"); }
+.f::before { background-image: url("lala/6.svg"); }
 
-.card-1::before { background-image: url("lala/one.svg"); }
-.card-2::before { background-image: url("lala/two.svg"); }
-.card-3::before { background-image: url("lala/three.svg"); }
-.card-4::before { background-image: url("lala/four.svg"); }
-.card-5::before { background-image: url("lala/5.svg"); }
-.card-6::before { background-image: url("lala/6.svg"); }
-.card-7::before { background-image: url("lala/7.svg"); }
-.card-8::before { background-image: url("lala/8.svg"); }
-
-@media (max-width: 900px) {
-    .container {
+@media (max-width: 1024px) {
+    .layout {
         grid-template-columns: 1fr;
-        grid-template-areas:
-            "one"
-            "two"
-            "three"
-            "four"
-            "five"
-            "six"
-            "seven"
-            "eight";
+    }
+
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .side {
+        flex-direction: row;
     }
 }
 
-@media (max-width: 500px) {
-    .container {
-        gap: 10px;
+@media (max-width: 600px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .side {
+        flex-direction: column;
     }
 }
