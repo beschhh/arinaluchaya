@@ -20,27 +20,11 @@
     gap: 24px;
 }
 
-.block {
-    position: relative;
+img {
     width: 100%;
-    padding-top: 70%;
+    height: auto;
+    display: block;
 }
-
-.block::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.a::before { background-image: url("lala/one.svg"); }
-.b::before { background-image: url("lala/two.svg"); }
-.c::before { background-image: url("lala/three.svg"); }
-.d::before { background-image: url("lala/four.svg"); }
-.e::before { background-image: url("lala/5.svg"); }
-.f::before { background-image: url("lala/6.svg"); }
 
 @media (max-width: 1024px) {
     .layout {
